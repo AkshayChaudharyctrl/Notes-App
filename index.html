@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="root">
+    <div id="result"></div>
+    <button id="user-A">User A<button>
+    <button id="user-B">User B<button>
+  </div>
+  
+  <script>
+// button for both users    
+  const user_A= document.getElementById("user-A");
+  const user_B= document.getElementById("user-B");
+  
+//     intial values for both users
+    let countA = 0;
+    let countB= 0;
+    
+//     adding event listener for user a
+    user_A.addEventListener('click', counterA);
+    function counterA(){
+      countA++;
+      countB--;
+      console.log("A score = " + countA);
+       console.log("B score = " + countB);
+      if(countA == 10){
+        document.getElementById("result").innerHTML="Player A wins";
+        
+//   adding event listener for user b
+         user_B.addEventListener('click', counterB);
+    function counterB(){
+      countB++;
+      countA--;
+      console.log("A score = " + countA);
+       console.log("B score = " + countB);
+      if(countB == 10){
+        document.getElementById("result").innerHTML="Player B wins";
+      }
+    }
+    
+  </script>
+</body>
+</html>
